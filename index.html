@@ -2,75 +2,79 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Control Center</title>
+<title>Home</title>
 
 <style>
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #0a0f1f, #000000);
-  font-family: 'Segoe UI', sans-serif;
-  color: #00eaff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: linear-gradient(180deg, #f2f2f7, #e5e5ea);
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #1c1c1e;
 }
 
 .header {
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: center;
 }
 
 .header h1 {
-  font-weight: 300;
-  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 28px;
   margin: 0;
 }
 
 .clock {
-  font-size: 60px;
+  font-size: 48px;
+  font-weight: 300;
   margin-top: 10px;
-  text-shadow: 0 0 20px #00eaff;
 }
 
-.panel {
+.container {
   margin-top: 40px;
-  width: 85%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
   padding: 25px;
-  border-radius: 20px;
-  background: rgba(0, 20, 40, 0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 234, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 234, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .card h2 {
-  margin-top: 0;
-  font-weight: 300;
-  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3a3a3c;
 }
 
-.button {
-  margin: 10px 5px;
-  padding: 12px 25px;
-  border-radius: 30px;
-  border: 1px solid #00eaff;
-  background: transparent;
-  color: #00eaff;
-  font-size: 16px;
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,0.05);
+  font-size: 14px;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
-.button:hover {
-  background: #00eaff;
-  color: #000;
-  box-shadow: 0 0 20px #00eaff;
+button:hover {
+  background: rgba(0,0,0,0.1);
 }
 </style>
 </head>
@@ -78,27 +82,31 @@ body {
 <body>
 
 <div class="header">
-  <h1>CONTROL CENTER</h1>
+  <h1>Home</h1>
   <div class="clock" id="clock"></div>
 </div>
 
-<div class="panel">
+<div class="container">
 
   <div class="card">
-    <h2>WEATHER</h2>
+    <h2>Weather</h2>
     <p>Loading...</p>
   </div>
 
   <div class="card">
-    <h2>LED CONTROL</h2>
-    <button class="button">ON</button>
-    <button class="button">OFF</button>
+    <h2>LED</h2>
+    <div class="button-group">
+      <button>On</button>
+      <button>Off</button>
+    </div>
   </div>
 
   <div class="card">
-    <h2>SPOTIFY</h2>
-    <button class="button">PLAY</button>
-    <button class="button">PAUSE</button>
+    <h2>Spotify</h2>
+    <div class="button-group">
+      <button>Play</button>
+      <button>Pause</button>
+    </div>
   </div>
 
 </div>
