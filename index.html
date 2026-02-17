@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Home Control</title>
-
 <style>
 body {
   margin: 0;
@@ -11,35 +10,22 @@ body {
   background: #0f0f12;
   color: #f2f2f7;
   display: flex;
-  justify-content: flex-start; /* aan linkerzijde */
+  justify-content: flex-start; /* links uitlijnen */
   align-items: flex-start;
   height: 100vh;
-  overflow: hidden;
-}
-
-/* Header + container roteren */
-#dashboard {
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vh;  /* hoogte van het scherm als breedte na rotatie */
-  height: 100vw; /* breedte van het scherm als hoogte na rotatie */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-left: 40px; /* ruimte links op monitor */
+  overflow-x: hidden;
 }
 
 /* Header */
 .header {
-  text-align: center;
-  margin-top: 30px;
+  text-align: left;
+  margin-top: 60px;
 }
 
 .header h1 {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 28px;
   margin: 0;
   color: #e5e5ea;
 }
@@ -53,9 +39,8 @@ body {
 
 /* Container */
 .container {
-  margin-top: 30px;
-  width: 95%;
-  max-width: 700px;
+  margin-top: 40px;
+  width: 350px; /* linker kolom breedte */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -115,45 +100,43 @@ button:hover {
 </head>
 
 <body>
-<div id="dashboard">
-  <div class="header">
-    <h1>Home Control</h1>
-    <div class="clock" id="clock"></div>
-  </div>
 
-  <div class="container">
-
-    <!-- Weather Card -->
-    <div class="card">
-      <h2>Weer - Overvecht-Zuid</h2>
-      <iframe 
-        class="weather-frame"
-        src="https://openweathermap.org/weathermap?lat=52.125&lon=5.138&zoom=10&layer=temperature">
-      </iframe>
-    </div>
-
-    <!-- LED Card -->
-    <div class="card">
-      <h2>LED</h2>
-      <div class="button-group">
-        <button>On</button>
-        <button>Off</button>
-      </div>
-    </div>
-
-    <!-- Spotify Card -->
-    <div class="card">
-      <h2>Spotify</h2>
-      <div class="button-group">
-        <button>Play</button>
-        <button>Pause</button>
-      </div>
-    </div>
-
-  </div>
+<div class="header">
+  <h1>Home Control</h1>
+  <div class="clock" id="clock"></div>
 </div>
 
-<!-- Klok Script -->
+<div class="container">
+
+  <!-- Weather Card -->
+  <div class="card">
+    <h2>Weer - Overvecht-Zuid</h2>
+    <iframe 
+      class="weather-frame"
+      src="https://openweathermap.org/weathermap?lat=52.125&lon=5.138&zoom=10&layer=temperature">
+    </iframe>
+  </div>
+
+  <!-- LED Card -->
+  <div class="card">
+    <h2>LED</h2>
+    <div class="button-group">
+      <button>On</button>
+      <button>Off</button>
+    </div>
+  </div>
+
+  <!-- Spotify Card -->
+  <div class="card">
+    <h2>Spotify</h2>
+    <div class="button-group">
+      <button>Play</button>
+      <button>Pause</button>
+    </div>
+  </div>
+
+</div>
+
 <script>
 function updateClock(){
   const now = new Date();
