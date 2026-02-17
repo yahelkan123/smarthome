@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yahya Control Center</title>
+<style>
+body {
+  background: #000;
+  color: #00f2ff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.clock {
+  font-size: 60px;
+  margin: 20px 0;
+}
+
+.section {
+  margin: 30px auto;
+  width: 80%;
+  padding: 20px;
+  border: 2px solid #00f2ff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00f2ff;
+}
+
+.button {
+  margin: 10px;
+  padding: 15px 30px;
+  background: black;
+  border: 2px solid #00f2ff;
+  color: #00f2ff;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: #00f2ff;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<h1>YAHYA CONTROL CENTER</h1>
+
+<div class="clock" id="clock"></div>
+
+<div class="section">
+  <h2>🌦 Weather</h2>
+  <p id="weather">Loading...</p>
+</div>
+
+<div class="section">
+  <h2>💡 LED Control</h2>
+  <button class="button">ON</button>
+  <button class="button">OFF</button>
+</div>
+
+<div class="section">
+  <h2>🎵 Spotify</h2>
+  <button class="button">Play</button>
+  <button class="button">Pause</button>
+</div>
+
+<script>
+function updateClock(){
+  const now = new Date();
+  document.getElementById("clock").innerText =
+    now.toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
+</body>
+</html>
