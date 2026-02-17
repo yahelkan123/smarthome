@@ -8,73 +8,78 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-  background: linear-gradient(180deg, #f2f2f7, #e5e5ea);
+  background: linear-gradient(180deg, #0f0f12, #1c1c1e);
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #1c1c1e;
+  color: #f2f2f7;
 }
 
 .header {
-  margin-top: 60px;
+  margin-top: 70px;
   text-align: center;
 }
 
 .header h1 {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 26px;
   margin: 0;
+  color: #e5e5ea;
 }
 
 .clock {
   font-size: 48px;
   font-weight: 300;
-  margin-top: 10px;
+  margin-top: 8px;
+  color: #ffffff;
 }
 
 .container {
-  margin-top: 40px;
+  margin-top: 50px;
   width: 90%;
-  max-width: 500px;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .card h2 {
   margin: 0 0 15px 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  color: #3a3a3c;
+  color: #d1d1d6;
+  letter-spacing: 0.5px;
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 button {
   flex: 1;
   padding: 12px;
-  border-radius: 14px;
+  border-radius: 16px;
   border: none;
-  background: rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   transition: 0.2s ease;
 }
 
 button:hover {
-  background: rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.18);
 }
 </style>
 </head>
@@ -90,7 +95,7 @@ button:hover {
 
   <div class="card">
     <h2>Weather</h2>
-    <p>Loading...</p>
+    <p style="opacity:0.7;">Loading...</p>
   </div>
 
   <div class="card">
@@ -115,7 +120,7 @@ button:hover {
 function updateClock(){
   const now = new Date();
   document.getElementById("clock").innerText =
-    now.toLocaleTimeString();
+    now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 }
 setInterval(updateClock,1000);
 updateClock();
